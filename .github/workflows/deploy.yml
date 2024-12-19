@@ -25,7 +25,8 @@ jobs:
           
       - name: Configure MIME types
         run: |
-          echo '<FilesMatch "\.mjs$">' > build/.htaccess
-          echo 'AddType text/javascript .mjs' >> build/.htaccess
-          echo '</FilesMatch>' >> build/.htaccess
+          echo 'AddType application/javascript .js' >> ./build/.htaccess
+          echo 'AddType application/javascript .mjs' >> ./build/.htaccess
+          echo 'AddType text/jsx .jsx' >> ./build/.htaccess
+          echo 'AddType application/javascript .tsx' >> ./build/.htaccess
   
