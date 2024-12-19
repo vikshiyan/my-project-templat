@@ -11,6 +11,8 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: '20.x'
+      - name: Install dependencies
+        run: npm install
       - run: npm ci
       - run: npm run build
       - name: Deploy
@@ -20,3 +22,10 @@ jobs:
           build_dir: dist
         env:
           GITHUB_TOKEN: ${{ secrets.TEMPLATE_SECRETE }}
+          
+      - name: Configure MIME types
+        run: |
+          echo '<FilesMatch "\.mjs$">' > build/.htaccess
+          echo 'AddType text/javascript .mjs' >> build/.htaccess
+          echo '</FilesMatch>' >> build/.htaccess
+  
