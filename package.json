@@ -1,12 +1,13 @@
 {
   "name": "my-project-templat",
+  "homepage": "group_project_catalog",//
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "lint": "eslint \"**/*.{ts,tsx}\" --fix",
+    "lint": "eslint  --fix",
     "preview": "vite preview",
     "prepare": "husky install",
     "format": "prettier . --ignore-path .gitignore --write",
